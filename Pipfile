@@ -1,0 +1,17 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+pytest = "*"
+pytest-watch = "*"
+pytest-sugar = "*"
+pyyaml = ">=4.2b1"
+
+
+[dev-packages]
+
