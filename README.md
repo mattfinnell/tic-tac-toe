@@ -16,12 +16,12 @@ I recommend adding your own custom tests within `tests/test_tic_tac_toe.py` of t
 
 ```python 
 def test_my_custom_case(solver):
-    input_board = [[0,0,0,], [0,0,0], [0,0,0]]
+    input_board = [[0,0,0], [0,0,0], [0,0,0]]
 
     assert solver.getWinner(input_board) == "O"
 ```
 
-or just use the Solver outside of the `pytest` suite by doing the following
+Or you can import the solver within your own file (within the project) and run it however you please. The following should be enough for getting started.
 
 ```python
 from TicTacToe.Solver import Solver
