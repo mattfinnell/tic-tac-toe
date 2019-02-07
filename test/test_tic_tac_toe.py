@@ -2,13 +2,21 @@ from TicTacToe.Solver import Solver
 
 import pytest
 
+def test_solver_on_example_board_2(solver, example_board_2):
+    result = solver._getWinner(example_board_2)
+
+    assert result == 1
+
 def test_solver_on_example_board(solver, example_board):
     result = solver._getWinner(example_board)
 
     assert result == 1
 
-def test_solver_returning_player_string_given_valid_board(solver, example_board):
+def test_solver_returning_player_string_given_example_board(solver, example_board):
     assert solver.getWinner(example_board) == "X"
+
+def test_solver_returning_player_string_given_example_board_2(solver, example_board_2):
+    assert solver.getWinner(example_board_2) == "X"
 
 def test_solver_returning_tie_given_invalid_board(solver, invalid_board):
     assert solver.getWinner(invalid_board) == "<tie>"
@@ -50,6 +58,10 @@ def solver():
 @pytest.fixture
 def example_board():
     return [[0, 1, 0],[1, 1, 0],[0, 1, 0]]
+
+@pytest.fixture
+def example_board_2():
+    return [[1, 1, 0], [1, 1, 0], [0, 0, 1]]
 
 @pytest.fixture
 def invalid_board():
